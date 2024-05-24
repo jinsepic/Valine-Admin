@@ -3,7 +3,8 @@ const AV = require('leanengine');
 const akismet = require('akismet-api');
 const akismetClient = akismet.client({
     key  : process.env.AKISMET_KEY,
-    blog : process.env.SITE_URL
+    blog : process.env.SITE_URL,
+    lang: 'zh-CN'
 });
 
 exports.checkSpam = (comment, ip)=> {
