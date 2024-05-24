@@ -5,7 +5,7 @@
   "description": "A sample Node.js app using Express",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js --FlowSc 1234",
     "dev": "nodemon server.js -- "
   },
   "dependencies": {
@@ -24,6 +24,6 @@
     "nodemon": "^1.11.0"
   },
   "engines": {
-    "node": "11.x"
+    "node": "12.x"
   }
 }
