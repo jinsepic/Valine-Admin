@@ -1,7 +1,7 @@
 'use strict';
 const AV = require('leanengine');
-const akismet = require('akismet-api');
-const akismetClient = akismet.client({
+const { AkismetClient } = require('akismet-api');
+const akismetClient = new AkismetClient({
     key  : process.env.AKISMET_KEY,
     blog : process.env.SITE_URL,
     lang: 'zh-CN'
