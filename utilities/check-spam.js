@@ -46,7 +46,7 @@ exports.checkSpam = (comment, ip)=> {
                 }
             });
         }
-        else console.log('未开启垃圾评论过滤或Akismet key 异常!');
+        else console.log('未开启垃圾评论过滤或Akismet key 异常!', valid);
     });
 };
 exports.submitSpam = (comment)=> {
