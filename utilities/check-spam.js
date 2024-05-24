@@ -19,7 +19,7 @@ exports.checkSpam = (comment, ip)=> {
         if (valid) {
             // TODO(1) 这里有缺陷
             comment.set('ip', ip);
-            akismetClient.checkSpam({
+            const checkData = {
                 user_ip : ip,
                 user_agent : comment.get('ua'),
                 referrer : process.env.SITE_URL + comment.get('url'),
@@ -30,7 +30,9 @@ exports.checkSpam = (comment, ip)=> {
                 comment_author_url : comment.get('link'),
                 comment_content : comment.get('comment'),
                 // is_test : true // Default value is false
-            }, function(err, spam) {
+            };
+            console.log(checkData, 998)
+            akismetClient.checkSpam(checkData, function(err, spam) {
                 if (err) console.log (`垃圾评论检测出错！${err}`);
                 if (spam) {
                     console.log('逮到一只垃圾评论，烧死它！用文火~');
